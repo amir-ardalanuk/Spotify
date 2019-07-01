@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="olA-3Y-LRB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aFh-OM-6yc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -90,24 +90,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-IU-398">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-IU-398">
                                 <rect key="frame" x="0.0" y="52" width="414" height="810"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-MU-GYw" customClass="CustomView" customModule="Spotify_Sample" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="0.0" width="390" height="56"/>
+                                        <rect key="frame" x="12" y="0.0" width="390" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eow-jb-MhG">
-                                                <rect key="frame" x="15" y="2" width="360" height="52"/>
+                                                <rect key="frame" x="15" y="2" width="360" height="46"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-search" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-Tx-wCD">
-                                                        <rect key="frame" x="0.0" y="13.5" width="25" height="25"/>
+                                                        <rect key="frame" x="0.0" y="10.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="pIs-DS-nZg"/>
                                                             <constraint firstAttribute="height" constant="25" id="wvU-8d-3FJ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-7w-5ER">
-                                                        <rect key="frame" x="37" y="11.5" width="323" height="29"/>
+                                                        <rect key="frame" x="37" y="8.5" width="323" height="29"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -118,7 +118,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="eow-jb-MhG" secondAttribute="trailing" constant="15" id="0d0-q2-P3J"/>
-                                            <constraint firstAttribute="height" constant="56" id="NSO-BL-cfF"/>
+                                            <constraint firstAttribute="height" constant="50" id="NSO-BL-cfF"/>
                                             <constraint firstItem="eow-jb-MhG" firstAttribute="top" secondItem="QBJ-MU-GYw" secondAttribute="top" constant="2" id="bqT-Tv-CEM"/>
                                             <constraint firstItem="eow-jb-MhG" firstAttribute="leading" secondItem="QBJ-MU-GYw" secondAttribute="leading" constant="15" id="iZg-FZ-7Yc"/>
                                             <constraint firstAttribute="bottom" secondItem="eow-jb-MhG" secondAttribute="bottom" constant="2" id="z0M-zP-uCp"/>
@@ -126,20 +126,37 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="NO"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                                <real key="value" value="28"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-dr-Sex">
-                                        <rect key="frame" x="0.0" y="64" width="414" height="746"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-gO-JIc" customClass="CustomView" customModule="Spotify_Sample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="414" height="735"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-dr-Sex">
+                                                <rect key="frame" x="0.0" y="14" width="414" height="721"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstItem="aZK-dr-Sex" firstAttribute="leading" secondItem="g8a-gO-JIc" secondAttribute="leading" id="4sS-T1-sM1"/>
+                                            <constraint firstAttribute="bottom" secondItem="aZK-dr-Sex" secondAttribute="bottom" id="QhY-sj-jk9"/>
+                                            <constraint firstItem="aZK-dr-Sex" firstAttribute="top" secondItem="g8a-gO-JIc" secondAttribute="top" constant="14" id="pWY-dr-dc6"/>
+                                            <constraint firstAttribute="trailing" secondItem="aZK-dr-Sex" secondAttribute="trailing" id="x0i-Sg-Uql"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="g8a-gO-JIc" firstAttribute="leading" secondItem="TRo-IU-398" secondAttribute="leading" id="3CK-ZV-nYY"/>
                                     <constraint firstItem="QBJ-MU-GYw" firstAttribute="leading" secondItem="TRo-IU-398" secondAttribute="leading" constant="12" id="FHi-nK-lMi"/>
-                                    <constraint firstItem="aZK-dr-Sex" firstAttribute="leading" secondItem="TRo-IU-398" secondAttribute="leading" id="W3l-Vx-UGu"/>
                                     <constraint firstAttribute="trailing" secondItem="QBJ-MU-GYw" secondAttribute="trailing" constant="12" id="elb-qh-vf4"/>
-                                    <constraint firstAttribute="trailing" secondItem="aZK-dr-Sex" secondAttribute="trailing" id="vTq-Oq-9sS"/>
+                                    <constraint firstAttribute="trailing" secondItem="g8a-gO-JIc" secondAttribute="trailing" id="pDY-2X-UqP"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -160,6 +177,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jb2-b3-udP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1038" y="19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4E6-W8-fmH">
+            <objects>
+                <viewController id="aFh-OM-6yc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NyQ-fT-Yx4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-dZ-jvj" customClass="FooterGradientView" customModule="Spotify_Sample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="FDc-Ws-uhm"/>
+                                    <constraint firstAttribute="width" secondItem="jkw-dZ-jvj" secondAttribute="height" multiplier="207:122" id="kOn-C8-Y1Z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.92941176469999998" green="0.10980392160000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.1450980392" green="0.30196078430000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jkw-dZ-jvj" firstAttribute="top" secondItem="NyQ-fT-Yx4" secondAttribute="top" id="HW5-mr-ZTt"/>
+                            <constraint firstAttribute="trailing" secondItem="jkw-dZ-jvj" secondAttribute="trailing" id="L6k-OC-heG"/>
+                            <constraint firstItem="jkw-dZ-jvj" firstAttribute="leading" secondItem="NyQ-fT-Yx4" secondAttribute="leading" id="szO-MR-y1Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Win-nX-r6I"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9X-Bt-wIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="18.75"/>
         </scene>
     </scenes>
     <resources>

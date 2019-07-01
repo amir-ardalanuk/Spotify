@@ -24,9 +24,21 @@ extension Gradiantable where Self : UIView {
         layer.locations = [ 0 , 1]
         layer.endPoint = CGPoint(x : 0.5,y: 1.0)
         
-        
         self.layer.insertSublayer(layer, at: 0)
         return layer
 
+    }
+    
+    func setFooterGradiant(withColors colors : [UIColor])->CAGradientLayer{
+        let layer = CAGradientLayer()
+        layer.frame = self.bounds
+        layer.colors = colors
+        layer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        layer.locations = [ 0 , 1]
+        layer.endPoint = CGPoint(x : 0.5,y: 1.0)
+        
+        self.layer.addSublayer(layer)//(layer, at: 1)
+        return layer
+        
     }
 }
