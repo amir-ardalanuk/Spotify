@@ -12,9 +12,6 @@ class GradientView : CustomView , GradientAnimatable {
         
     }
     
-   
-    
-    
     var gradientLayer: CAGradientLayer?
     
     @IBInspectable
@@ -45,6 +42,8 @@ class GradientView : CustomView , GradientAnimatable {
         }
         setGradientLayer(colors)
         self.layoutIfNeeded()
+        self.layoutSubviews()
+        
     }
 }
 class FooterGradientView : GradientView {

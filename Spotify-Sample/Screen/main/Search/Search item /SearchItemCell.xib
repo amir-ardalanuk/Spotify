@@ -24,9 +24,18 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpK-iL-rdD" customClass="CustomView" customModule="Spotify_Sample" customModuleProvider="target">
                                 <rect key="frame" x="12" y="12" width="87.5" height="87.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jku-H6-GjW">
+                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="87.5"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jku-H6-GjW" secondAttribute="trailing" id="C0p-Qj-wKh"/>
+                                    <constraint firstAttribute="bottom" secondItem="jku-H6-GjW" secondAttribute="bottom" id="Df7-jk-LgQ"/>
                                     <constraint firstAttribute="width" secondItem="SpK-iL-rdD" secondAttribute="height" id="TgJ-iG-IXo"/>
+                                    <constraint firstItem="jku-H6-GjW" firstAttribute="top" secondItem="SpK-iL-rdD" secondAttribute="top" id="VQb-oP-bBR"/>
+                                    <constraint firstItem="jku-H6-GjW" firstAttribute="leading" secondItem="SpK-iL-rdD" secondAttribute="leading" id="oO3-11-6Qy"/>
                                     <constraint firstAttribute="width" constant="87.5" id="x2y-8e-jco"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -42,16 +51,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TZ8-DT-aGu">
-                                <rect key="frame" x="111.5" y="27.5" width="44" height="56.5"/>
+                                <rect key="frame" x="111.5" y="27.5" width="212.5" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXx-uG-dWk">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="212.5" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSo-13-WoF">
-                                        <rect key="frame" x="0.0" y="37" width="44" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSo-13-WoF">
+                                        <rect key="frame" x="0.0" y="37" width="212.5" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -64,6 +73,7 @@
                             <constraint firstItem="SpK-iL-rdD" firstAttribute="leading" secondItem="raV-BP-5Ve" secondAttribute="leading" constant="12" id="IKB-A0-PQ0"/>
                             <constraint firstItem="TZ8-DT-aGu" firstAttribute="centerY" secondItem="raV-BP-5Ve" secondAttribute="centerY" id="ISD-lb-D1a"/>
                             <constraint firstItem="TZ8-DT-aGu" firstAttribute="leading" secondItem="SpK-iL-rdD" secondAttribute="trailing" constant="12" id="ccX-QX-h4F"/>
+                            <constraint firstAttribute="trailing" secondItem="TZ8-DT-aGu" secondAttribute="trailing" constant="8" id="mIl-EL-BKG"/>
                             <constraint firstItem="SpK-iL-rdD" firstAttribute="top" secondItem="raV-BP-5Ve" secondAttribute="top" constant="12" id="n3o-YS-EET"/>
                             <constraint firstAttribute="bottom" secondItem="SpK-iL-rdD" secondAttribute="bottom" constant="12" id="rOt-Jb-lXZ"/>
                         </constraints>
@@ -90,6 +100,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgContent" destination="jku-H6-GjW" id="AdC-3u-hMZ"/>
+                <outlet property="lblDescribtion" destination="KSo-13-WoF" id="2um-2S-abI"/>
+                <outlet property="lblTitle" destination="dXx-uG-dWk" id="QlY-LN-vHY"/>
+            </connections>
             <point key="canvasLocation" x="139.13043478260872" y="190.84821428571428"/>
         </tableViewCell>
     </objects>
