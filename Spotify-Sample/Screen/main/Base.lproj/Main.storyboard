@@ -90,25 +90,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Meo-LC-efO">
-                                <rect key="frame" x="8" y="52" width="398" height="56"/>
-                                <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-dr-Sex">
-                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-IU-398">
+                                <rect key="frame" x="0.0" y="52" width="414" height="810"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-MU-GYw" customClass="CustomView" customModule="Spotify_Sample" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="0.0" width="390" height="56"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eow-jb-MhG">
+                                                <rect key="frame" x="15" y="2" width="360" height="52"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-search" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-Tx-wCD">
+                                                        <rect key="frame" x="0.0" y="13.5" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="pIs-DS-nZg"/>
+                                                            <constraint firstAttribute="height" constant="25" id="wvU-8d-3FJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-7w-5ER">
+                                                        <rect key="frame" x="37" y="11.5" width="323" height="29"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eow-jb-MhG" secondAttribute="trailing" constant="15" id="0d0-q2-P3J"/>
+                                            <constraint firstAttribute="height" constant="56" id="NSO-BL-cfF"/>
+                                            <constraint firstItem="eow-jb-MhG" firstAttribute="top" secondItem="QBJ-MU-GYw" secondAttribute="top" constant="2" id="bqT-Tv-CEM"/>
+                                            <constraint firstItem="eow-jb-MhG" firstAttribute="leading" secondItem="QBJ-MU-GYw" secondAttribute="leading" constant="15" id="iZg-FZ-7Yc"/>
+                                            <constraint firstAttribute="bottom" secondItem="eow-jb-MhG" secondAttribute="bottom" constant="2" id="z0M-zP-uCp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="28"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-dr-Sex">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="746"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QBJ-MU-GYw" firstAttribute="leading" secondItem="TRo-IU-398" secondAttribute="leading" constant="12" id="FHi-nK-lMi"/>
+                                    <constraint firstItem="aZK-dr-Sex" firstAttribute="leading" secondItem="TRo-IU-398" secondAttribute="leading" id="W3l-Vx-UGu"/>
+                                    <constraint firstAttribute="trailing" secondItem="QBJ-MU-GYw" secondAttribute="trailing" constant="12" id="elb-qh-vf4"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZK-dr-Sex" secondAttribute="trailing" id="vTq-Oq-9sS"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Meo-LC-efO" firstAttribute="leading" secondItem="l8P-3f-WpU" secondAttribute="leading" constant="8" id="9nD-fH-QVz"/>
-                            <constraint firstItem="l8P-3f-WpU" firstAttribute="bottom" secondItem="aZK-dr-Sex" secondAttribute="bottom" id="A0R-7J-rY3"/>
-                            <constraint firstItem="aZK-dr-Sex" firstAttribute="leading" secondItem="l8P-3f-WpU" secondAttribute="leading" id="MKf-v8-7xA"/>
-                            <constraint firstItem="aZK-dr-Sex" firstAttribute="top" secondItem="Meo-LC-efO" secondAttribute="bottom" constant="8" id="Qt5-nq-cbJ"/>
-                            <constraint firstItem="Meo-LC-efO" firstAttribute="top" secondItem="l8P-3f-WpU" secondAttribute="top" constant="8" id="Xak-ts-mzv"/>
-                            <constraint firstAttribute="trailing" secondItem="Meo-LC-efO" secondAttribute="trailing" constant="8" id="e0Y-Q2-grk"/>
-                            <constraint firstItem="l8P-3f-WpU" firstAttribute="trailing" secondItem="aZK-dr-Sex" secondAttribute="trailing" id="iQ7-QC-iag"/>
+                            <constraint firstAttribute="trailing" secondItem="TRo-IU-398" secondAttribute="trailing" id="a4Z-3l-tcD"/>
+                            <constraint firstItem="TRo-IU-398" firstAttribute="bottom" secondItem="l8P-3f-WpU" secondAttribute="bottom" id="gYt-Ml-QuS"/>
+                            <constraint firstItem="TRo-IU-398" firstAttribute="top" secondItem="l8P-3f-WpU" secondAttribute="top" constant="8" id="hNg-8N-dAh"/>
+                            <constraint firstItem="TRo-IU-398" firstAttribute="leading" secondItem="l8P-3f-WpU" secondAttribute="leading" id="nMd-ca-Rte"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l8P-3f-WpU"/>
                     </view>
@@ -119,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-search" width="50" height="50"/>
         <image name="icons8-spotify" width="100" height="100"/>
         <image name="login-bg" width="1240" height="828"/>
     </resources>

@@ -58,16 +58,16 @@ class CustomView: UIView  , Dashable , Shadowable{
         if let dash = self.dashLayer {
             self.layer.addSublayer(dash)
         }
-    
     }
+    
     func config() {
         
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
-        self.setCorner(radius: self.radius)
         if hasShadow {
             self.dropShadow()
         }
+         self.setCorner(radius: self.radius)
     }
    
     func initaili(){
