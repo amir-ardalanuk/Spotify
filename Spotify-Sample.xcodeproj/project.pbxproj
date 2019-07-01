@@ -32,6 +32,7 @@
 		F45D669C22CA296A00D663CE /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45D669922CA292D00D663CE /* EmptyView.xib */; };
 		F45D669E22CA359500D663CE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D669D22CA359500D663CE /* GradientView.swift */; };
 		F45D66A122CA43D700D663CE /* ArtistDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D66A022CA43D700D663CE /* ArtistDetailVC.swift */; };
+		F45D66A222CA5E3500D663CE /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D666F22CA0D2C00D663CE /* NetworkWrapper.swift */; };
 		F4E0565222C9D4EB00105C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565122C9D4EB00105C80 /* AppDelegate.swift */; };
 		F4E0565422C9D4EB00105C80 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565322C9D4EB00105C80 /* LoginVC.swift */; };
 		F4E0565722C9D4EB00105C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0565522C9D4EB00105C80 /* Main.storyboard */; };
@@ -50,7 +51,7 @@
 		F45D666C22CA0D2C00D663CE /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		F45D666D22CA0D2C00D663CE /* Gradiantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradiantable.swift; sourceTree = "<group>"; };
 		F45D666E22CA0D2C00D663CE /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
-		F45D666F22CA0D2C00D663CE /* Wrapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapable.swift; sourceTree = "<group>"; };
+		F45D666F22CA0D2C00D663CE /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
 		F45D667022CA0D2C00D663CE /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		F45D667122CA0D2C00D663CE /* Dashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashable.swift; sourceTree = "<group>"; };
 		F45D667922CA139800D663CE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 				F45D667022CA0D2C00D663CE /* ReusableView.swift */,
 				F45D668122CA156D00D663CE /* Errorable.swift */,
 				F45D666E22CA0D2C00D663CE /* Shadowable.swift */,
-				F45D666F22CA0D2C00D663CE /* Wrapable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -263,6 +263,7 @@
 		F4E0566522C9D96400105C80 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F45D666F22CA0D2C00D663CE /* NetworkWrapper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -385,6 +386,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spotify-Sample/Pods-Spotify-Sample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -394,6 +398,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -421,6 +428,7 @@
 				F45D667622CA0D3100D663CE /* Shadowable.swift in Sources */,
 				F45D668722CA15C800D663CE /* ClubError.swift in Sources */,
 				F45D666922CA090500D663CE /* SearchVC.swift in Sources */,
+				F45D66A222CA5E3500D663CE /* NetworkWrapper.swift in Sources */,
 				F45D668622CA15C800D663CE /* Route.swift in Sources */,
 				F45D667A22CA139800D663CE /* BaseViewModel.swift in Sources */,
 				F45D667322CA0D3100D663CE /* Gradiantable.swift in Sources */,

@@ -11,7 +11,8 @@ import Foundation
 enum SpotifyError: LocalizedError {
     
     case failure(message: String)
-    
+    case timeout
+    case notConnected
     var localization: String {
         switch self {
         case .failure(let message):

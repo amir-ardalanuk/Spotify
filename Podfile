@@ -8,4 +8,6 @@ target 'Spotify-Sample' do
   pod 'SpotifyLogin', '~> 0.1'
   pod 'RxSwift'#, '~> 5'
   pod 'RxCocoa'#, '~> 5'
+  pod 'Alamofire' , '~> 4.7'
+  pod 'AlamofireObjectMapper' , '~> 5.0'
 end
