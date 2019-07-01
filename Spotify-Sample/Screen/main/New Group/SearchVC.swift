@@ -10,6 +10,13 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    @IBOutlet weak var tfSearch: UITextField!
+    @IBOutlet weak var tableview: UITableView!{
+        didSet{
+            tableview.separatorStyle = .none
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

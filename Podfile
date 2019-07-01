@@ -6,5 +6,6 @@ target 'Spotify-Sample' do
   use_frameworks!
 
   pod 'SpotifyLogin', '~> 0.1'
-
+  pod 'RxSwift'#, '~> 5'
+  pod 'RxCocoa'#, '~> 5'
 end

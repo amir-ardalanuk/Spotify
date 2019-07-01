@@ -152,6 +152,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l8P-3f-WpU"/>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="aZK-dr-Sex" id="tgi-IC-PjG"/>
+                        <outlet property="tfSearch" destination="Lz8-7w-5ER" id="Vql-Nw-7Mc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jb2-b3-udP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

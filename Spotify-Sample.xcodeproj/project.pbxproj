@@ -17,6 +17,10 @@
 		F45D667522CA0D3100D663CE /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D667022CA0D2C00D663CE /* ReusableView.swift */; };
 		F45D667622CA0D3100D663CE /* Shadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D666E22CA0D2C00D663CE /* Shadowable.swift */; };
 		F45D667822CA10A500D663CE /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D666A22CA0C1200D663CE /* CustomView.swift */; };
+		F45D667A22CA139800D663CE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D667922CA139800D663CE /* BaseViewModel.swift */; };
+		F45D668222CA156D00D663CE /* Errorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D668122CA156D00D663CE /* Errorable.swift */; };
+		F45D668622CA15C800D663CE /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D668422CA15C700D663CE /* Route.swift */; };
+		F45D668722CA15C800D663CE /* ClubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D668522CA15C800D663CE /* ClubError.swift */; };
 		F4E0565222C9D4EB00105C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565122C9D4EB00105C80 /* AppDelegate.swift */; };
 		F4E0565422C9D4EB00105C80 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565322C9D4EB00105C80 /* LoginVC.swift */; };
 		F4E0565722C9D4EB00105C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0565522C9D4EB00105C80 /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 		F45D666F22CA0D2C00D663CE /* Wrapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapable.swift; sourceTree = "<group>"; };
 		F45D667022CA0D2C00D663CE /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		F45D667122CA0D2C00D663CE /* Dashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashable.swift; sourceTree = "<group>"; };
+		F45D667922CA139800D663CE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		F45D668122CA156D00D663CE /* Errorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errorable.swift; sourceTree = "<group>"; };
+		F45D668422CA15C700D663CE /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		F45D668522CA15C800D663CE /* ClubError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubError.swift; sourceTree = "<group>"; };
 		F4E0564E22C9D4EB00105C80 /* Spotify-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E0565122C9D4EB00105C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E0565322C9D4EB00105C80 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 		F400B3F222C9FFC30099181F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F45D668322CA15BA00D663CE /* Enums */,
 				F45D666B22CA0C4800D663CE /* New Group */,
 				F4E0565D22C9D4ED00105C80 /* Info.plist */,
 				F4E0565122C9D4EB00105C80 /* AppDelegate.swift */,
@@ -123,10 +132,20 @@
 				F45D666D22CA0D2C00D663CE /* Gradiantable.swift */,
 				F45D666C22CA0D2C00D663CE /* NibLoadable.swift */,
 				F45D667022CA0D2C00D663CE /* ReusableView.swift */,
+				F45D668122CA156D00D663CE /* Errorable.swift */,
 				F45D666E22CA0D2C00D663CE /* Shadowable.swift */,
 				F45D666F22CA0D2C00D663CE /* Wrapable.swift */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F45D668322CA15BA00D663CE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F45D668522CA15C800D663CE /* ClubError.swift */,
+				F45D668422CA15C700D663CE /* Route.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		F4E0564522C9D4EB00105C80 = {
@@ -170,6 +189,7 @@
 		F4E0566422C9D95D00105C80 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F45D667922CA139800D663CE /* BaseViewModel.swift */,
 				F45D666A22CA0C1200D663CE /* CustomView.swift */,
 			);
 			path = Components;
@@ -297,12 +317,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spotify-Sample/Pods-Spotify-Sample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SpotifyLogin/SpotifyLogin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpotifyLogin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,9 +347,13 @@
 				F400B3F722CA028E0099181F /* Theme.swift in Sources */,
 				F45D667422CA0D3100D663CE /* NibLoadable.swift in Sources */,
 				F45D667622CA0D3100D663CE /* Shadowable.swift in Sources */,
+				F45D668722CA15C800D663CE /* ClubError.swift in Sources */,
 				F45D666922CA090500D663CE /* SearchVC.swift in Sources */,
+				F45D668622CA15C800D663CE /* Route.swift in Sources */,
+				F45D667A22CA139800D663CE /* BaseViewModel.swift in Sources */,
 				F45D667322CA0D3100D663CE /* Gradiantable.swift in Sources */,
 				F45D667822CA10A500D663CE /* CustomView.swift in Sources */,
+				F45D668222CA156D00D663CE /* Errorable.swift in Sources */,
 				F45D666522CA046100D663CE /* Color.swift in Sources */,
 				F45D667222CA0D3100D663CE /* Dashable.swift in Sources */,
 				F4E0565422C9D4EB00105C80 /* LoginVC.swift in Sources */,
