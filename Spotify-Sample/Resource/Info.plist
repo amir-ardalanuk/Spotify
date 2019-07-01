@@ -21,8 +21,10 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.mydigipay.spotifytest</string>
+				<string>dgp</string>
 			</array>
+			<key>CFBundleURLName</key>
+			<string>com.mydigipay.spotifytest</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>

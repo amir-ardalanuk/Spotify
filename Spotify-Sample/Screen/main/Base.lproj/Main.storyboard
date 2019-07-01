@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="olA-3Y-LRB">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="Spotify_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0jO-5d-A47">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-xe-ArK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OiV-Qj-GW4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="XHC-3X-v9j">
+                                <rect key="frame" x="85.5" y="311.5" width="243.5" height="273.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B9x-Lt-Wgr">
+                                        <rect key="frame" x="65.5" y="0.0" width="112" height="149.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-spotify" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-sI-ULl">
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="100"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spotify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-sT-Yvt">
+                                                <rect key="frame" x="0.0" y="100" width="112" height="49.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Spotify App To Authencticate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2V6-Q4-CeO">
+                                        <rect key="frame" x="0.0" y="185.5" width="243.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beS-8S-nMK" customClass="SpotifyLoginButton" customModule="SpotifyLogin">
+                                        <rect key="frame" x="102.5" y="243.5" width="38" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="0jO-5d-A47" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2aW-vg-pmK"/>
+                            <constraint firstItem="aTp-xe-ArK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Aiz-Vy-Aei"/>
+                            <constraint firstAttribute="bottom" secondItem="0jO-5d-A47" secondAttribute="bottom" id="Iy6-aR-X3i"/>
+                            <constraint firstItem="XHC-3X-v9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jio-sU-bIK"/>
+                            <constraint firstItem="aTp-xe-ArK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TBt-dO-me7"/>
+                            <constraint firstAttribute="trailing" secondItem="0jO-5d-A47" secondAttribute="trailing" id="cwh-ID-TW3"/>
+                            <constraint firstAttribute="bottom" secondItem="aTp-xe-ArK" secondAttribute="bottom" id="kye-Fa-KRH"/>
+                            <constraint firstItem="XHC-3X-v9j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="siC-ka-XIq"/>
+                            <constraint firstAttribute="trailing" secondItem="aTp-xe-ArK" secondAttribute="trailing" id="ucj-36-1Uo"/>
+                            <constraint firstItem="0jO-5d-A47" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x6Q-KF-oST"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="beS-8S-nMK" id="jg9-jK-X6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
+        </scene>
+        <!--SearchVC-->
+        <scene sceneID="UKf-Jc-80h">
+            <objects>
+                <viewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="olA-3Y-LRB" customClass="SearchVC" customModule="Spotify_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lgA-gy-ATh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Meo-LC-efO">
+                                <rect key="frame" x="8" y="52" width="398" height="56"/>
+                                <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-dr-Sex">
+                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Meo-LC-efO" firstAttribute="leading" secondItem="l8P-3f-WpU" secondAttribute="leading" constant="8" id="9nD-fH-QVz"/>
+                            <constraint firstItem="l8P-3f-WpU" firstAttribute="bottom" secondItem="aZK-dr-Sex" secondAttribute="bottom" id="A0R-7J-rY3"/>
+                            <constraint firstItem="aZK-dr-Sex" firstAttribute="leading" secondItem="l8P-3f-WpU" secondAttribute="leading" id="MKf-v8-7xA"/>
+                            <constraint firstItem="aZK-dr-Sex" firstAttribute="top" secondItem="Meo-LC-efO" secondAttribute="bottom" constant="8" id="Qt5-nq-cbJ"/>
+                            <constraint firstItem="Meo-LC-efO" firstAttribute="top" secondItem="l8P-3f-WpU" secondAttribute="top" constant="8" id="Xak-ts-mzv"/>
+                            <constraint firstAttribute="trailing" secondItem="Meo-LC-efO" secondAttribute="trailing" constant="8" id="e0Y-Q2-grk"/>
+                            <constraint firstItem="l8P-3f-WpU" firstAttribute="trailing" secondItem="aZK-dr-Sex" secondAttribute="trailing" id="iQ7-QC-iag"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l8P-3f-WpU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jb2-b3-udP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="19"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-spotify" width="100" height="100"/>
+        <image name="login-bg" width="1240" height="828"/>
+    </resources>
+</document>

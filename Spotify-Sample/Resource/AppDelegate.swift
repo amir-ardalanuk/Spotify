@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        SpotifyLogin.shared.configure(clientID: "ba05b9cd59634cefa8493ac961d76ed6", clientSecret: "80b7235a88264654a105a989f6775a59", redirectURL: URL(string:"https://www.mydigipay.com/")!)
+        SpotifyLogin.shared.configure(clientID: "10f3518dc1a0468bad48f10b7815f176" ,// "ba05b9cd59634cefa8493ac961d76ed6",
+                                      clientSecret: "98c4e37b44ce4f7497b4a9bf7c0dd81a",// "80b7235a88264654a105a989f6775a59",
+                                      redirectURL: URL(string:"dgp://www.mydigipay.com/")!)
         return true
     }
 
