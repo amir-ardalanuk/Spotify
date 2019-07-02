@@ -43,6 +43,8 @@
 		F45D66B322CB1EBB00D663CE /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45D66B222CB1EBB00D663CE /* Splash.storyboard */; };
 		F45D66B522CB1ED900D663CE /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D66B422CB1ED900D663CE /* SplashVC.swift */; };
 		F45D66B722CB288700D663CE /* AccessTokenDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D66B622CB288700D663CE /* AccessTokenDAL.swift */; };
+		F45D66B922CB32B700D663CE /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D66B822CB32B700D663CE /* SearchVM.swift */; };
+		F45D66BB22CB385B00D663CE /* ExReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D66BA22CB385B00D663CE /* ExReactive.swift */; };
 		F4E0565222C9D4EB00105C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565122C9D4EB00105C80 /* AppDelegate.swift */; };
 		F4E0565422C9D4EB00105C80 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0565322C9D4EB00105C80 /* LoginVC.swift */; };
 		F4E0565722C9D4EB00105C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0565522C9D4EB00105C80 /* Main.storyboard */; };
@@ -89,6 +91,8 @@
 		F45D66B222CB1EBB00D663CE /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F45D66B422CB1ED900D663CE /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F45D66B622CB288700D663CE /* AccessTokenDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDAL.swift; sourceTree = "<group>"; };
+		F45D66B822CB32B700D663CE /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
+		F45D66BA22CB385B00D663CE /* ExReactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExReactive.swift; sourceTree = "<group>"; };
 		F4E0564E22C9D4EB00105C80 /* Spotify-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E0565122C9D4EB00105C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E0565322C9D4EB00105C80 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				F45D669422CA218E00D663CE /* Search item  */,
 				F45D666822CA090500D663CE /* SearchVC.swift */,
+				F45D66B822CB32B700D663CE /* SearchVM.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 		F4E0566422C9D95D00105C80 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F45D66BA22CB385B00D663CE /* ExReactive.swift */,
 				F45D669022CA1D1A00D663CE /* ExTableView.swift */,
 				F45D669222CA1EE300D663CE /* ExCollectionView.swift */,
 				F45D668922CA170B00D663CE /* Search initail View */,
@@ -427,6 +433,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Spotify-Sample/Pods-Spotify-Sample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
@@ -439,6 +446,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
@@ -457,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45D66B922CB32B700D663CE /* SearchVM.swift in Sources */,
 				F45D669722CA21B600D663CE /* SearchItemCell.swift in Sources */,
 				F45D669122CA1D1A00D663CE /* ExTableView.swift in Sources */,
 				F45D66B022CB1CDF00D663CE /* ImageModel.swift in Sources */,
@@ -480,6 +489,7 @@
 				F45D667322CA0D3100D663CE /* Gradiantable.swift in Sources */,
 				F45D667822CA10A500D663CE /* CustomView.swift in Sources */,
 				F45D668B22CA175500D663CE /* Connectable.swift in Sources */,
+				F45D66BB22CB385B00D663CE /* ExReactive.swift in Sources */,
 				F45D668222CA156D00D663CE /* Errorable.swift in Sources */,
 				F45D666522CA046100D663CE /* Color.swift in Sources */,
 				F45D667222CA0D3100D663CE /* Dashable.swift in Sources */,

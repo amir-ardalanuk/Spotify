@@ -10,4 +10,5 @@ target 'Spotify-Sample' do
   pod 'RxCocoa'#, '~> 5'
   pod 'Alamofire' , '~> 4.7'
   pod 'AlamofireObjectMapper' , '~> 5.0'
+  pod 'Kingfisher'
 end

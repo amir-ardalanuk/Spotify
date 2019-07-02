@@ -38,10 +38,10 @@ class ArtistItem : Mappable{
     
     var externalUrls : ExternalUrl?
     var followers : Follower?
-    var genres : [AnyObject]?
+    var genres : [String]?
     var href : String?
     var id : String?
-    var images : [AnyObject]?
+    var images : [ImageModel]?
     var name : String?
     var popularity : Int?
     var type : String?

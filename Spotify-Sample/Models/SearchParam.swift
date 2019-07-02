@@ -23,6 +23,11 @@ struct SearchParam : Mappable {
         
     }
     
+    init(type : SearchType ,query:String? ) {
+        self.type = type
+        self.query = query
+    }
+    
     mutating func mapping(map: Map) {
         type <- map["type"]
         query <- map["q"]
