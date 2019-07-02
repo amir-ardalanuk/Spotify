@@ -7,10 +7,54 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
+class SearchVM : BaseViewModel,ReactiveCompatible {
+    enum State {
+        case loading(Bool)
+        case notFound
+        case notConnected
+        case itemLoaded([String])
+    }
+    
+    let onChange = PublishSubject<State>()
+    let txtSearch = PublishSubject<String?>()
+    
+    override init() {
+        super.init()
+//        txtSearch.subscribe(onNext: { (text) in
+//            self.searchItem(with)
+//        }).disposed(by: bag)
+    }
+    
+    func searchItem(with text : String?){
+        
+    }
+    
+}
+extension Reactive where Base: SearchVM {
+    
+    var search: Binder<String?> {
+        return Binder(self.base, binding: { (view, data) in
+            view.searchItem(with: data)
+        })
+    }
+}
 class SearchVC: UIViewController {
 
-    @IBOutlet weak var tfSearch: UITextField!
+    let vm = SearchVM()
+    let bag = DisposeBag()
+    
+    @IBOutlet weak var tfSearch: UITextField!{
+        didSet{
+            tfSearch.rx.text
+                .filter{($0 ?? "").count > 2}
+                .debounce(.seconds(2), scheduler: MainScheduler.instance)
+                .bind(to: vm.rx.search)
+                .disposed(by: bag)
+        }
+    }
     @IBOutlet weak var tableview: UITableView!{
         didSet{
             tableview.separatorStyle = .none

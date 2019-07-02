@@ -10,9 +10,10 @@ import Alamofire
 import RxSwift
 import AlamofireObjectMapper
 import ObjectMapper
-protocol Wrapable {}
 
-extension Wrapable {
+protocol NetworkWrapper {}
+
+extension NetworkWrapper {
     
     
     /// all Service call with this ! please if you want to Check the Value check the **response.result.value**
@@ -68,12 +69,11 @@ extension Wrapable {
             }
         }
     
-        //TODO: Add Token From Spotify
         func generateHeader(hasToken : Bool )->HTTPHeaders {
             var header : HTTPHeaders = ["Content-Type" : "application/json"]
-//            if let token =  StoreDAL.shared.getToken(), hasToken {
-//                header.updateValue("Bearer \( token )", forKey: "Authorization")
-//            }
+            if let token = AccessTokenDAL.shared.get(), hasToken {
+                header.updateValue("Bearer \( token )", forKey: "Authorization")
+            }
             return header
         }
 }
