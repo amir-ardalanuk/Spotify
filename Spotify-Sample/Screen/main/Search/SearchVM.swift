@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class SearchVM : BaseViewModel,ReactiveCompatible {
+    
     enum State {
         case loading(Bool)
         case dataNotExist
@@ -20,16 +21,16 @@ class SearchVM : BaseViewModel,ReactiveCompatible {
     
     let onChange = PublishSubject<State>()
     let txtSearch = PublishSubject<String?>()
+    var artisList = [ArtistItem]()
+    
     override var loading: Bool {
         didSet{
             self.onChange.onNext(SearchVM.State.loading(loading))
         }
     }
+    
     override init() {
         super.init()
-        //        txtSearch.subscribe(onNext: { (text) in
-        //            self.searchItem(with)
-        //        }).disposed(by: bag)
     }
     
     func searchItem(with text : String?){
@@ -47,13 +48,18 @@ class SearchVM : BaseViewModel,ReactiveCompatible {
     }
     
     func fetchData(res : SearchResponse){
-        guard let list = isDataExist(for : res)  else{
+        guard let list = isDataExist(for : res) else {
             self.onChange.onNext(SearchVM.State.dataNotExist)
             return
         }
+        artisList = list
         let convertToSearchCellModel = list.map{(item) -> SearchItemCellModel in
+            
             let popularity = "popularity \(item.popularity ?? 0)"
-            return SearchItemCellModel(img: item.images?.first?.url ?? "", desc: popularity, title: item.name)
+            return SearchItemCellModel(id : item.id,
+                                       img: item.images?.first?.url ?? "",
+                                       desc: popularity,
+                                       title: item.name)
         }
         self.onChange.onNext(SearchVM.State.itemLoaded(convertToSearchCellModel))
     }
@@ -66,6 +72,10 @@ class SearchVM : BaseViewModel,ReactiveCompatible {
         }
     }
     
+    
+    func findArtist(By id:String?) -> ArtistItem? {
+        return self.artisList.filter{$0.id == id}.first
+    }
     
     
 }

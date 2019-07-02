@@ -104,6 +104,7 @@
                 <outlet property="imgContent" destination="jku-H6-GjW" id="AdC-3u-hMZ"/>
                 <outlet property="lblDescribtion" destination="KSo-13-WoF" id="2um-2S-abI"/>
                 <outlet property="lblTitle" destination="dXx-uG-dWk" id="QlY-LN-vHY"/>
+                <outlet property="vwContainer" destination="raV-BP-5Ve" id="Sqt-db-7AE"/>
             </connections>
             <point key="canvasLocation" x="139.13043478260872" y="190.84821428571428"/>
         </tableViewCell>

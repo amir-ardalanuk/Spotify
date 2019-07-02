@@ -16,11 +16,12 @@ class SearchVC: UIViewController {
     let vm = SearchVM()
     let bag = DisposeBag()
     
+    @IBOutlet weak var vwActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tfSearch: UITextField!{
         didSet{
             tfSearch.rx.text
                 .filter{($0 ?? "").count > 2}
-                .debounce(.seconds(2), scheduler: MainScheduler.instance)
+                .debounce(.seconds(1), scheduler: MainScheduler.instance)
                 .bind(to: vm.rx.search)
                 .disposed(by: bag)
         }
@@ -28,14 +29,15 @@ class SearchVC: UIViewController {
     @IBOutlet weak var tableview: UITableView!{
         didSet{
             tableview.separatorStyle = .none
-           tableview.register(SearchItemCell.self)
+            tableview.register(SearchItemCell.self)
             tableview.dataSource = searchDataSource
+            tableview.delegate = self
         }
     }
     
-    let searchDataSource = SearchDataSource()
-    let vwNotice         = SearchNoticeView()
-    let vwLoading       = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    let searchDataSource    = SearchDataSource()
+    let vwNotice            = SearchNoticeView()
+    let vwLoading           = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
     
     
     lazy var vwEmpty : EmptyView = {
@@ -54,6 +56,16 @@ class SearchVC: UIViewController {
         return .lightContent
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let vc as ArtistDetailVC:
+            if let artist = sender as? ArtistItem {
+                vc.vm.artist.onNext(artist)
+            }
+        default:break
+        }
+    }
+    
 
     func subscribe(){
         self.vm.onChange.subscribe(onNext: { (state) in
@@ -62,7 +74,7 @@ class SearchVC: UIViewController {
             case .loading(let loading):
                 self.searchDataSource.cleanData()
                 self.tableview.reloadData()
-                self.tableview.tableFooterView = loading ? self.vwLoading : nil
+                self.vwActivityIndicator.isHidden = !loading
             case .dataNotExist:
                 self.tableview.tableFooterView = self.vwEmpty
             case .notConnected:
@@ -72,42 +84,19 @@ class SearchVC: UIViewController {
                 self.tableview.reloadData()
             }
         }).disposed(by: bag)
+        
+        self.searchDataSource.clickedCell.subscribe(onNext: { (searchModel) in
+            let artist = self.vm.findArtist(By: searchModel.id ?? "")
+            self.performSegue(withIdentifier: "ArtistDetail", sender:artist)
+        }).disposed(by: bag)
     }
+    
+  
+    
 }
 
-class SearchDataSource : NSObject , UITableViewDataSource {
-    
-    var searchModel = [SearchItemCellModel]()
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : SearchItemCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        cell.config(model: searchModel[indexPath.row])
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchModel.count
-    }
-    
-    
-    func insetData(artistList : [SearchItemCellModel] ){
-        self.searchModel = artistList
-    }
-    
-    func cleanData(){
-        self.searchModel = []
-    }
-    
-}
-extension Reactive where Base: SearchDataSource {
-    
-    var setData: Binder<[SearchItemCellModel]?> {
-        return Binder(self.base, binding: { (base, list) in
-            base.insetData(artistList: list ?? [])
-        })
+extension SearchVC : UITableViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
 }

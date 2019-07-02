@@ -10,12 +10,14 @@ import UIKit
 import RxSwift
 
 struct SearchItemCellModel {
+    var id : String?
     var img : String?
     var desc : String?
     var title : String?
 }
 class SearchItemCell: UITableViewCell,ReusableView {
 
+    @IBOutlet weak var vwContainer: CustomView!
     @IBOutlet weak var imgContent: UIImageView!
     @IBOutlet weak var lblDescribtion: UILabel!
     @IBOutlet weak var lblTitle: UILabel!

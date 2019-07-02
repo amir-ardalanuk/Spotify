@@ -14,6 +14,7 @@ let baseUrl = "https://api.spotify.com/v1/"
 
 enum Route: String {
     case search = "search"
+    case artist = "artists"
 }
 
 extension Route {

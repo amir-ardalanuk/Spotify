@@ -22,4 +22,12 @@ class SpotifyServices : NetworkWrapper {
                        encoding: URLEncoding.default,
                        hasToken: true)
     }
+    
+    func artistAlbum(by id : String) -> Observable<Result<AlbumResponse>>{
+        return request(url: Route.artist.url + "/\(id)/albums",
+                       param:nil,
+                       method: HTTPMethod.get,
+                       encoding: URLEncoding.default,
+                       hasToken: true)
+    }
 }
