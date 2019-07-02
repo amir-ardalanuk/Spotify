@@ -20,6 +20,6 @@ class SpotifyServices : NetworkWrapper {
                        param: param.toJSON(),
                        method: HTTPMethod.get,
                        encoding: URLEncoding.default,
-                       hasToken: false)
+                       hasToken: true)
     }
 }

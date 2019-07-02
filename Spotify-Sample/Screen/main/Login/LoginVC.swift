@@ -27,16 +27,26 @@ class LoginVC: UIViewController {
     }
 
     @objc func onLoginClicked(){
-         SpotifyLoginPresenter.login(from: self, scopes: [.userReadTop])
+         SpotifyLoginPresenter.login(from: self, scopes: [])
     }
 
     
     @objc func loginSuccessful(){
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
-            if error != nil {
-                // User is not logged in, show log in flow.
+            guard let token = accessToken else{
+                //TODO: Show Message To User
+                return
             }
+            AccessTokenDAL.shared.set(key: token)
+            self.routeToSearch()
+            
         }
+    }
+    func routeToSearch(){
+        var destinationVC : UIViewController?
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "SearchVC")
+        UIApplication.shared.keyWindow?.rootViewController =  destinationVC
     }
 }
 

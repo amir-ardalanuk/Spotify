@@ -52,7 +52,7 @@ extension NetworkWrapper {
                         
                     case .success(let value):
                         observer.onNext(Result.success(value))
-                        
+                         observer.onCompleted()
                     case .failure(let error):
                         
                         switch error._code {
