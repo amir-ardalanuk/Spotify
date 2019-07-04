@@ -11,9 +11,13 @@ class BaseViewModel: Errorable {
     var onError = PublishSubject<Exception> ()
     var bag = DisposeBag()
    
+   
+    
     init() {
         onError.subscribe(onNext: { (exception) in
             switch exception {
+            case .timeout: break
+                
             default : break
             }
             

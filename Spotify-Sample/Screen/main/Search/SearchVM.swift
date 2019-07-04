@@ -42,7 +42,9 @@ class SearchVM : BaseViewModel,ReactiveCompatible {
             case .success(let val):
                self.fetchData(res: val)
             case .failure(let er):
-                self.catchError(error: er)
+                self.catchError(error: er, tryAgain: {
+                    self.searchItem(with: text)
+                })
             }
         }).disposed(by: bag)
     }

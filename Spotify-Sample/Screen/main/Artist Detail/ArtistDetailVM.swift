@@ -52,11 +52,15 @@ class ArtistDetailVM : BaseViewModel {
                 case .success(let val):
                     self.fetchData(album: val)
                 case .failure(let er):
-                    self.catchError(error: er)
+                    self.catchError(error: er, tryAgain: {
+                        self.getAlbums()
+                    })
                 }
             }).disposed(by: bag)
         } catch (let error){
-            self.catchError(error: error)
+            self.catchError(error: error, tryAgain: {
+                self.getAlbums()
+            })
             self.onChange.onNext(.loading(false))
         }
     }
